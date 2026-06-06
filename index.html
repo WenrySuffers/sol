@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERMINAL_00</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier Prime', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-shadow: 0 0 5px #ffffff;
+        }
+        
+        .container {
+            border: 1px solid #ffffff;
+            padding: 40px;
+            width: 320px;
+            background-color: #0d0d0d;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        h1 {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        input {
+            background: #000;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: inherit;
+            box-sizing: border-box;
+            outline: none;
+        }
+        
+        button {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: #cccccc;
+            letter-spacing: 1px;
+        }
+        
+        #message {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        /* Efecto de parpadeo sutil */
+        @keyframes blink { 50% { opacity: 0.5; } }
+        .blink { animation: blink 2s infinite; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PROYECTO SOL DE AMANECER</h1>
+        <p class="blink">El archivo requiere autenticación...</p>
+        <input type="password" id="password" placeholder="INGRESE CLAVE">
+        <button onclick="checkPassword()">AUTENTICAR</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value.toLowerCase();
+            const correctPassword = '21082007'; 
+
+            if (password === correctPassword) {
+                document.body.style.backgroundColor = '#ffffff';
+                document.body.style.color = '#000000';
+                document.querySelector('.container').style.borderColor = '#000';
+                
+                alert('CONEXIÓN ESTABLECIDA');
+                window.location.href = 'https://www.youtube.com/watch?v=jIwX3YozFQ4'; 
+            } else {
+                document.getElementById('message').innerText = 'ERROR: Identidad no verificada.';
+            }
+        }
+    </script>
+</body>
+</html>
